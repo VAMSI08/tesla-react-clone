@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 
-const Section = ({title,description,leftBtnTxt,rightBtnTxt,bgImg}) => {
+const Section = ({title,description,leftBtnTxt,rightBtnTxt,bgImg,showArrow}) => {
     return (
         <Wrap bgImage={bgImg}>
             <Fade bottom>
@@ -11,7 +11,7 @@ const Section = ({title,description,leftBtnTxt,rightBtnTxt,bgImg}) => {
                 <p>{description}</p>
             </ItemText>
             </Fade>
-            <Buttons>
+            <Buttons arrow={showArrow}>
                 <Fade bottom>
                     <ButtonGroup>
                         <LeftButton>
@@ -20,7 +20,7 @@ const Section = ({title,description,leftBtnTxt,rightBtnTxt,bgImg}) => {
                         {rightBtnTxt && <RightButton> {rightBtnTxt}</RightButton>}
                     </ButtonGroup>
                 </Fade>
-                <DownArrow src="images/down-arrow.svg"/>
+               {showArrow ? <DownArrow src="images/down-arrow.svg"/> : <DownArrowMargin />} 
             </Buttons>
         </Wrap>
     )
@@ -85,4 +85,9 @@ const DownArrow = styled.img`
     height:40px;
     animation: animateDown infinite 1.5s;
 `
-const Buttons = styled.div``
+const Buttons = styled.div`
+`
+const DownArrowMargin = styled.div`
+    margin-top:20px;
+    height:40px;
+`

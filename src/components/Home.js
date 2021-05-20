@@ -11,6 +11,7 @@ const Home = () => {
                 leftBtnTxt = "custom Order"
                 rightBtnTxt = "existing inventory"
                 bgImg ="model-s.jpg"
+                showArrow = "true"
             />
             <Section 
                 title = "Model Y"
